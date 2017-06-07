@@ -1,0 +1,23 @@
+{
+  "name": "hhhh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpFile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sukhesh035/Marketting-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sukhesh035/Marketting-App/issues"
+  },
+  "homepage": "https://github.com/sukhesh035/Marketting-App#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "gulp": "^3.9.1"
+  }
+}

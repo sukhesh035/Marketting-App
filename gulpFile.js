@@ -1,6 +1,6 @@
 var express = require('express');
 
-var app = require('gulp');
+var gulp = require('gulp');
 
 gulp.task('express', function() {
     var app = express();

@@ -7,14 +7,46 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="home.css">
-<script src="lib/angular.min.js"></script>
+  <link rel="stylesheet" href="home/home.css">
+<script src="/lib/angular.min.js"></script>
+<script src="/lib/angular-ui-router.js"></script>
+<script src="/routes/route.js"></script>
 <script src="app.js"></script>
-
 <body ng-app="marketin_App">
-    <div ng-controller="test">
-        {{msg}}
-        <section id = "add" 
+<div class="main1">
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Valley Soft</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a ui-sref="home">Home</a></li>
+            <li><a ui-sref="#">About Us</a></li>
+            <li><a ui-sref="#">Contact Us</a></li>
+        </ul>
+        <form class="navbar-form navbar-left">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search">
+                <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+            <i style="padding:3px 3px;" class="glyphicon glyphicon-search"></i>
+          </button>
+                </div>
+            </div>
+        </form>
     </div>
+</nav>
+<div>
+    <ui-view>
+        
+    </ui-view>
+</div>
+
+</div>
+   <hr/>
+    <footer>
+        <div class="footer"> Contact Num : 810-XXX-XXXX</div>
+    </footer>
+    
 </body>
 </html>

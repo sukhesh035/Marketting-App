@@ -40,7 +40,15 @@ console.log(typeof (currentStudentId));
     });
 });
 
-
+app.get('/getStudentDetails/:id',function(req, res){
+    console.log(req.params.id);
+    var currentStudentId = Number(req.params.id);
+    db.Marketing_Student.find({id:currentStudentId},function(err,data){
+        console.log(err);
+        console.log(data);
+        res.send(data);
+    });
+});
 
 
 

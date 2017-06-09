@@ -2,64 +2,13 @@
     <h1> List of consultants </h1>
 
     <style>
-        .candidate_container {
-            position: relative;
-        }
         
-        .overlay {
-            position: absolute;
-            bottom: 0;
-            left: 100%;
-            right: 0;
-            background-color: rgba(75, 75, 75, 0.3);
-            overflow: hidden;
-            width: 0;
-            height: 100%;
-            transition: .5s ease;
-        }
-        
-        .candidate_container:hover .overlay {
-            width: 100%;
-            left: 0;
-        }
-        
-        .text {
-            white-space: nowrap;
-            color: white;
-            font-size: 20px;
-            position: absolute;
-            overflow: hidden;
-            top: 40%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-        }
-        .edit_candidate{
-            margin-top: 60px;
-        }
-        .btn{
-            font-size: 70%;
-            padding: 10px;
-        }
-
     </style>
 
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <!--                <div ng-repeat="list in mockList" class="candidate_container">-->
-                <!--                    <div class="candidate">-->
-                <!--                        <img ng-src="" alt=""><br>-->
-                <!--                        <h2 class="candidate_item">{{list.first_name+" "+last_name}}</h2><br><br><br>-->
-                <!--                        <p class="candidate_item">{{list.start_date}}</p><br>-->
-                <!--                        <p class="candidate_item">{{list.client_count}}</p><br>-->
-                <!--                        <h6 class="candidate_item">-->
-                <!--                            {{list.email}}-->
-                <!--                        </h6>-->
-                <!--                    </div>-->
-
-                <!--                </div>-->
-                <div ng-repeat="list in result" class="candidate_container">
+                             <div ng-repeat="list in result" class="candidate_container">
                     <div class="candidate">
                         <img ng-src="" alt="">
                         <h2 class="candidate_item">{{list.first_name}}</h2>

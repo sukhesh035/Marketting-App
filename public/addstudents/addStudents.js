@@ -1,12 +1,24 @@
 var app = angular.module("addStudents_module", []);
-app.controller("addStudents_controller", ["$scope","$http", function ($scope,$http) {
+app.controller("addStudents_controller", ["$scope", "$http", "$state", function ($scope, $http, $state) {
     $scope.studentInfo = {};
-    
+
     $scope.getInfo = function () {
         $http.post('/addstudent', $scope.studentInfo).then(function (response) {
             console.log(response);
-            $scope.studentInfo ={};
+            $scope.studentInfo = {};
         });
-        
+
+    };
+
+    console.log($state.params.id);
+    
+    if($state.current.name == "editStudent"){
+        $http.get("/getStudentDetails/"+$state.params.id).then(function(response){
+            console.log(response);
+            $scope.studentInfo = response.data[0];
+        });
     }
+    
+    
+    
 }]);

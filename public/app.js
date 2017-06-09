@@ -1,5 +1,1 @@
-var app = angular.module("marketin_App",[]);
-
-app.controller("test",["$scope",function($scope){
-                $scope.msg = "Sukhesh";
-               }]);
+var app = angular.module("marketin_App",["routes_module","list_consultants","addStudents_module"]);

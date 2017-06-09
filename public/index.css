@@ -2,7 +2,7 @@
 .footer {
     background: black;
     bottom: 0px;
-    
+
     position: absolute;
     padding: 10px 30px 10px 30px;
 }
@@ -10,7 +10,7 @@
 footer {
     color: #c1c1c1;
     bottom: 0px;
-    
+
     width: 100%;
     padding: 1rem;
 }
@@ -50,4 +50,19 @@ body {
     padding: 1rem;
     background: black;
     text-align: center;
+}
+
+.contactForm {
+    border-style: ridge;
+    border-radius: 2px;
+    border-color: white;
+    padding: 20px 50px 50px 120px;
+    width: 600px;
+    margin-left: 300px;
+    color: black;
+}
+
+#describe {
+    width: 347px;
+    color: black;
 }

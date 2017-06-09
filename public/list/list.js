@@ -1,11 +1,7 @@
 var app = angular.module("list_consultants", []);
 app.controller("list_controller", ["$scope", "$http", "$state", "$location", function ($scope, $http, $state, $location) {
-    $http.get('data/mockData.json').then(function (data) {
-        $scope.mockList = data.data.data;
-        console.log($scope.mockList);
-
-    });
-    $http.get('getStudentList').then(function (response) {
+       $http.get('/getStudentList').then(function (response) {
+        console.log(response);
         $scope.result = response.data;
         console.log($scope.result);
     });

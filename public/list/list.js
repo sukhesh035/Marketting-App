@@ -5,6 +5,9 @@ app.controller("list_controller", ["$scope", "$http", function ($scope, $http) {
         console.log($scope.mockList);
 
     });
-
+$http.get('getStudentList').then(function(response){
+    $scope.result = response.data;
+    console.log($scope.result);
+})
 
 }]);

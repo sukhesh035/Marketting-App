@@ -6,26 +6,38 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div ng-repeat="list in mockList" class="candidate_container">
+                <!--                <div ng-repeat="list in mockList" class="candidate_container">-->
+                <!--                    <div class="candidate">-->
+                <!--                        <img ng-src="" alt=""><br>-->
+                <!--                        <h2 class="candidate_item">{{list.first_name+" "+last_name}}</h2><br><br><br>-->
+                <!--                        <p class="candidate_item">{{list.start_date}}</p><br>-->
+                <!--                        <p class="candidate_item">{{list.client_count}}</p><br>-->
+                <!--                        <h6 class="candidate_item">-->
+                <!--                            {{list.email}}-->
+                <!--                        </h6>-->
+                <!--                    </div>-->
+
+                <!--                </div>-->
+                <div ng-repeat="list in result" class="candidate_container">
                     <div class="candidate">
-                        <img ng-src="" alt=""><br>
-                        <h2 class="candidate_item">{{list.first_name+" "+last_name}}</h2><br><br><br>
-                        <p class="candidate_item">{{list.start_date}}</p><br>
-                        <p class="candidate_item">{{list.client_count}}</p><br>
-                        <h6 class="candidate_item">
-                            {{list.email}}
-                        </h6>
+                        <img ng-src="" alt="">
+                        <h2 class="candidate_item">{{list.first_name}}</h2>
+                        <h4 class="candidate_item">{{list.last_name}}</h4><br><br>
+                        <p class="candidate_item">Strt Date: {{list.start_date | date:'MM-dd-yyyy' }}</p>
+                        <p class="candidate_item">No.of client intrvws: {{list.client_count}}</p>
+                        <h6 class="candidate_item">{{list.email}}</h6>
+                        <u><a href="edit">Edit</a></u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <u><a href="delete">Delete</a></u>
                     </div>
-
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
-    
+
 </div>
 <div>
-        <ui-view>
+    <ui-view>
 
-        </ui-view>
-    </div>
+    </ui-view>
+</div>

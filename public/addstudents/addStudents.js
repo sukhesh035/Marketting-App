@@ -5,6 +5,8 @@ app.controller("addStudents_controller", ["$scope","$http", function ($scope,$ht
     $scope.getInfo = function () {
         $http.post('/addstudent', $scope.studentInfo).then(function (response) {
             console.log(response);
+            $scope.studentInfo ={};
         });
+        
     }
 }]);

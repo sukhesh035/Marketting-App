@@ -10,7 +10,7 @@ app.controller("addStudents_controller", ["$scope", "$http", "$state", function 
 
     };
 
-    console.log($state.params.id);
+    console.log("$state.params"+$state.params);
     
     if($state.current.name == "editStudent"){
         $http.get("/getStudentDetails/"+$state.params.id).then(function(response){
@@ -19,6 +19,11 @@ app.controller("addStudents_controller", ["$scope", "$http", "$state", function 
         });
     }
     
-    
+    if($state.current.name == "studentDetails"){
+        $http.get("/getStudentDetails/"+$state.params.id).then(function(response){
+            console.log(response);
+            $scope.studentInfo = response.data[0];
+        });
+    }
     
 }]);

@@ -19,4 +19,8 @@ app.config(function ($urlRouterProvider, $stateProvider) {
         url: '/editStudent/:id',
         templateUrl: 'addstudents/addstudents1.html'
     });
+    $stateProvider.state('studentDetails', {
+        url: '/studentDetails/:id',
+        templateUrl: 'addstudents/studentDetails.html'
+    });
 });

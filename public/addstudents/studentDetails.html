@@ -1,0 +1,11 @@
+<div ng-controller ="addStudents_controller">
+   <div id = "studentsDetailsDiv">
+    <h3>First Name:</h3>{{studentInfo.first_name}}<br>
+       <h3>Last Name:</h3>{{studentInfo.last_name}}<br>
+       <h3>Email:</h3>{{studentInfo.email}}<br>
+       <h3>School:</h3>{{studentInfo.school}}<br>
+       <h3>Start Date:</h3>{{studentInfo.start_date | date:'MM-dd-yyyy'}}<br>
+       <h3>Total Client Interviews:</h3>{{studentInfo.client_count}} <button id = "increaseCount">+</button><br>
+       
+    </div>
+</div>

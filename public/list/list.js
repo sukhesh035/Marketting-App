@@ -21,5 +21,7 @@ app.controller("list_controller", ["$scope", "$http", "$state", "$location", fun
     $scope.editStudent = function (id) {
         $location.path("/editStudent/" + id);
     };
-
+$scope.studentDetails =function(id){
+    $location.path("/studentDetails/" + id);
+};
 }]);

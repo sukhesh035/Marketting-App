@@ -2,14 +2,15 @@
     <h1> List of consultants </h1>
 
     <style>
-        
+
+
     </style>
 
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                             <div ng-repeat="list in result" class="candidate_container">
-                    <div class="candidate">
+                <div ng-repeat="list in result" class="candidate_container">
+                    <div class="candidate" ng-click="studentDetails(list.id)">
                         <img ng-src="" alt="">
                         <h2 class="candidate_item">{{list.first_name}}</h2>
                         <h4 class="candidate_item">{{list.last_name}}</h4><br><br>
@@ -19,12 +20,14 @@
                         <div class="overlay">
                             <button class="text btn btn-warning btn-xs" ng-click="deleteStudent(list.id,$index)">Delete</button><br>
                             <button class="text edit_candidate btn btn-info btn-xs" ng-click="editStudent(list.id)">Edit</button>
+<!--                            <button class="text show_details btn btn-info btn-xs" >show Details</button>-->
                         </div>
                         <!--
                         <u><a href="edit">Edit</a></u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <u><a href="delete">Delete</a></u>
 -->
                     </div>
+                    
                 </div>
 
             </div>

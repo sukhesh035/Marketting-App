@@ -1,11 +1,31 @@
-<div ng-controller ="addStudents_controller">
-   <div id = "studentsDetailsDiv">
-    <h3>First Name:</h3>{{studentInfo.first_name}}<br>
-       <h3>Last Name:</h3>{{studentInfo.last_name}}<br>
-       <h3>Email:</h3>{{studentInfo.email}}<br>
-       <h3>School:</h3>{{studentInfo.school}}<br>
-       <h3>Start Date:</h3>{{studentInfo.start_date | date:'MM-dd-yyyy'}}<br>
-       <h3>Total Client Interviews:</h3>{{studentInfo.client_count}} <button id = "increaseCount">+</button><br>
-       
+
+   <style>
+       .studentList_container{
+           border: 1px solid #fff;
+           height: 50px;
+           margin-bottom: 20px;
+           background: #c1c1c1;
+           color: black;
+       }
+       .addStudent{
+           border: 1px solid #fff;
+           height: 50px;
+           margin-bottom: 20px;
+           background: #c1c1c1;
+           color: black;
+       }
+</style>
+
+   
+   <div class="container" ng-controller="addStudents_controller">
+    <div class="row" id="studentsDetailsDiv">
+        <div class="col-lg-8 col-lg-offset-2">
+            Interviewed clients:
+            <div class="studentList_container" ng-repeat="client in studentInfo.client_name">
+                {{client}}
+            </div>
+            
+<!--            <h3>Total Client Interviews:</h3>{{studentInfo.client_count.length}}-->
+        </div>
     </div>
 </div>

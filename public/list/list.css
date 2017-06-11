@@ -14,3 +14,42 @@
 .candidate {
     padding: 20px;
 }
+.candidate_container {
+            position: relative;
+        }
+        
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 100%;
+            right: 0;
+            background-color: rgba(75, 75, 75, 0.3);
+            overflow: hidden;
+            width: 0;
+            height: 100%;
+            transition: .5s ease;
+        }
+        
+        .candidate_container:hover .overlay {
+            width: 100%;
+            left: 0;
+        }
+        
+        .text {
+            white-space: nowrap;
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            overflow: hidden;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+        .edit_candidate{
+            margin-top: 60px;
+        }
+        .btn{
+            font-size: 70%;
+            padding: 10px;
+        }

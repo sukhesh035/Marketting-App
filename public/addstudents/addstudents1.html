@@ -12,13 +12,13 @@
             <form class="form-horizontal">
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="firstName">First Name:</label>
-                    <div class="col-sm-10"> 
+                    <div class="col-sm-10">
                         <input type="text" class="form-control" id="firstName" ng-model="studentInfo.first_name" placeholder="Enter FirstName" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="lastName">Last Name:</label>
-                    <div class="col-sm-10"> 
+                    <div class="col-sm-10">
                         <input type="text" class="form-control" id="lastName" ng-model="studentInfo.last_name" placeholder="Enter LastName" required>
                     </div>
                 </div>
@@ -30,30 +30,32 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="school">School:</label>
-                    <div class="col-sm-10"> 
+                    <div class="col-sm-10">
                         <input type="text" class="form-control" id="school" ng-model="studentInfo.school" placeholder="Enter University" required>
                     </div>
-                </div>                
+                </div>
+                <!--
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="startdate">Start Date:</label>
-                    <div class="col-sm-10"> 
+                    <div class="col-sm-10">
                         <input type="Date" class="form-control" id="StartDate" ng-model="studentInfo.start_date" placeholder="Enter StartDate">
                     </div>
                 </div>
+-->
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="client_count">Client Count:</label>
-                    <div class="col-sm-10"> 
+                    <div class="col-sm-10">
                         <input type="number" class="form-control" id="clientCount" ng-model="studentInfo.client_count" placeholder="Enter no. of client Interviews" required>
                     </div>
                 </div>
-                <div class="form-group"> 
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <div class="checkbox">
-                            <label><input type="checkbox"> Remember me</label>
-                        </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="clientName">Add client</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="addStudent" ng-model="studentInfo.clientName" placeholder="Add client">
                     </div>
                 </div>
-                <div class="form-group"> 
+
+                <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                         <button type="submit" ng-click="getInfo()" class="btn btn-default">Submit</button>
                     </div>

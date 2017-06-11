@@ -15,10 +15,17 @@ app.config(function($urlRouterProvider, $stateProvider) {
         url: '/list',
         templateUrl: 'list/list.html'
     });
-
     $stateProvider.state('contact', {
         url: '/contact',
         templateUrl: 'contact/contact.html'
     });
 
+    $stateProvider.state('editStudent', {
+        url: '/editStudent/:id',
+        templateUrl: 'addstudents/addstudents1.html'
+    });
+    $stateProvider.state('studentDetails', {
+        url: '/studentDetails/:id',
+        templateUrl: 'addstudents/studentDetails.html'
+    });
 });

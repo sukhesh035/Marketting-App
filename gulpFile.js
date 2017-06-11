@@ -6,23 +6,19 @@ var mongojs = require('mongojs');
 var db = mongojs('Marketing', ['Marketing_Student']);
 var bodyParser = require('body-parser');
 
-var MongoClient = require('mongodb').MongoClient,
-    format = require('util').format;
 
-var collection;
-
-
-MongoClient.connect('mongodb://sukhesh.nri:ABCabc123$@ds015334.mlab.com:15334/marketing', function(err, db) {
-    if (err) throw err;
-
-    collection = db.collection('marketing_student');
-    collection.insert({ a: 2 }, function(err, docs) {
-        collection.count(function(err, count) {
-            console.log(format("count = %s", count));
-            //db.close();
-        });
-    });
-});
+//var MongoClient = require('mongodb').MongoClient
+//    , format = require('util').format;
+//
+//var collection;
+//
+//
+//MongoClient.connect('mongodb://sukhesh.nri:ABCabc123$@ds015334.mlab.com:15334/marketing',function(err, db) {
+//    if(err) throw err;
+//
+//    collection = db.collection('marketing_student');
+//
+//});
 
 
 
@@ -30,25 +26,28 @@ MongoClient.connect('mongodb://sukhesh.nri:ABCabc123$@ds015334.mlab.com:15334/ma
 app.use(bodyParser.json());
 app.use('/', express.static('public'));
 app.get('/getStudentList', function(req, res) {
-    collection.find(function(err, docs) {
-        console.log(docs);
+    //console.log(res);
+    db.Marketing_Student.find(function(err, docs) {
         res.send(docs);
+        //console.log(docs);
     });
 });
 app.post('/addstudent', function(req, res) {
-    //   console.log(req.body);
+    console.log(req.params.id);
     var id = Math.floor(Math.random() * 10000);
     req.body.id = id;
-    collection.insert(req.body, function(err, docs) {
+    //   console.log("Date" + db.collection.aggregate(ISODate(req.body.start_date)));
+    db.Marketing_Student.insert(req.body, function(err, docs) {
         res.send("Added Succesfully");
     });
 });
 
 app.put('/deleteStudent/:id', function(req, res) {
+
     console.log(req.params.id);
     var currentStudentId = Number(req.params.id);
     console.log(typeof(currentStudentId));
-    collection.remove({ "id": currentStudentId }, function(err, data) {
+    db.Marketing_Student.remove({ "id": currentStudentId }, function(err, data) {
         console.log(err);
         console.log(data);
         if (data.ok) {
@@ -59,7 +58,15 @@ app.put('/deleteStudent/:id', function(req, res) {
     });
 });
 
-
+app.get('/getStudentDetails/:id', function(req, res) {
+    console.log(req.params.id);
+    var currentStudentId = Number(req.params.id);
+    db.Marketing_Student.find({ id: currentStudentId }, function(err, data) {
+        console.log(err);
+        console.log(data);
+        res.send(data);
+    });
+});
 
 
 

@@ -1,0 +1,31 @@
+
+   <style>
+       .studentList_container{
+           border: 1px solid #fff;
+           height: 50px;
+           margin-bottom: 20px;
+           background: #c1c1c1;
+           color: black;
+       }
+       .addStudent{
+           border: 1px solid #fff;
+           height: 50px;
+           margin-bottom: 20px;
+           background: #c1c1c1;
+           color: black;
+       }
+</style>
+
+   
+   <div class="container" ng-controller="addStudents_controller">
+    <div class="row" id="studentsDetailsDiv">
+        <div class="col-lg-8 col-lg-offset-2">
+            Interviewed clients:
+            <div class="studentList_container" ng-repeat="client in studentInfo.client_name">
+                {{client}}
+            </div>
+            
+<!--            <h3>Total Client Interviews:</h3>{{studentInfo.client_count.length}}-->
+        </div>
+    </div>
+</div>

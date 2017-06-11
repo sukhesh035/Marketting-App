@@ -25,22 +25,24 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use('/', express.static('public'));
 app.get('/getStudentList', function(req, res) {
-    console.log(res);
+    //console.log(res);
     db.Marketing_Student.find(function(err, docs) {
         res.send(docs);
-        console.log(docs);
+        //console.log(docs);
     });
 });
-app.post('/addstudent',function(req, res){
-//   console.log(req.body);
+app.post('/addstudent', function(req, res){
+   console.log(req.params.id);
     var id = Math.floor(Math.random()*10000);
     req.body.id = id;
+//   console.log("Date" + db.collection.aggregate(ISODate(req.body.start_date)));
     db.Marketing_Student.insert(req.body,function(err, docs){
         res.send("Added Succesfully");
     });
 });
 
 app.put('/deleteStudent/:id',function(req, res){
+    
     console.log(req.params.id);
     var currentStudentId = Number(req.params.id);
 console.log(typeof (currentStudentId));

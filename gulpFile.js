@@ -20,6 +20,7 @@ MongoClient.connect('mongodb://sukhesh.nri:ABCabc123$@ds015334.mlab.com:15334/ma
 
 
 
+
 app.use(bodyParser.json());
 app.use('/', express.static('public'));
 
@@ -57,7 +58,6 @@ app.get('/getStudentList', function (req, res) {
         dataObj.push(doc);
 
       }
-
     });
     setTimeout(function(){
       console.log(dataObj);
@@ -97,17 +97,25 @@ app.put('/deleteStudent/:id',function(req, res){
   });
 });
 
+app.get('/getStudentDetails/:id', function(req, res) {
+    console.log(req.params.id);
+    var currentStudentId = Number(req.params.id);
+    db.Marketing_Student.find({ id: currentStudentId }, function(err, data) {
+        console.log(err);
+        console.log(data);
+        res.send(data);
+    });
+});
 
 
 
 
 
 
-
-gulp.task('express', function () {
-  var server = app.listen(3000, function () {
-    console.log("server started at 3000");
-  });
+gulp.task('express', function() {
+    var server = app.listen(3000, function() {
+        console.log("server started at 3000");
+    });
 });
 
 gulp.task('default', ['express']);

@@ -60,14 +60,10 @@ app.get('/getStudentList', function (req, res) {
       }
     });
     setTimeout(function(){
-      console.log(dataObj);
       res.send(dataObj);
     },500);
 
   });
-
-
-
 });
 
 //p();

@@ -1,9 +1,10 @@
 var app = angular.module("list_consultants", []);
 app.controller("list_controller", ["$scope", "$http", "$state", "$location", function ($scope, $http, $state, $location) {
-       $http.get('/getStudentList').then(function (response) {
+    $http.get('/getStudentList').then(function (response) {
         console.log(response);
-        $scope.result = response.data;
+        $scope.result = response.data.filter(Boolean);
         console.log($scope.result);
+
     });
 
     $scope.deleteStudent = function (id, index) {
@@ -21,7 +22,7 @@ app.controller("list_controller", ["$scope", "$http", "$state", "$location", fun
     $scope.editStudent = function (id) {
         $location.path("/editStudent/" + id);
     };
-$scope.studentDetails =function(id){
-    $location.path("/studentDetails/" + id);
-};
+    $scope.studentDetails =function(id){
+        $location.path("/studentDetails/" + id);
+    };
 }]);

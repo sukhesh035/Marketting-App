@@ -63,7 +63,7 @@ app.get('/getStudentList', function (req, res) {
       console.log(dataObj);
       res.send(dataObj);
     },500);
-  
+
   });
 
 
@@ -98,13 +98,28 @@ app.put('/deleteStudent/:id',function(req, res){
 });
 
 app.get('/getStudentDetails/:id', function(req, res) {
-    console.log(req.params.id);
-    var currentStudentId = Number(req.params.id);
-    db.Marketing_Student.find({ id: currentStudentId }, function(err, data) {
+  console.log(req.params.id);
+  var currentStudentId = Number(req.params.id);
+  var cursor = collection.find({ id: currentStudentId });
+  var dataObj = [];
+  return new Promise(function(resolve, reject) {
+    cursor.each(function(err,doc){
+      if (err) {
         console.log(err);
-        console.log(data);
-        res.send(data);
+        reject(err);
+      } else {
+        dataObj.push(doc);
+
+      }
     });
+    setTimeout(function(){
+      console.log(dataObj);
+      res.send(dataObj);
+    },500);
+
+  });
+
+
 });
 
 
@@ -113,9 +128,9 @@ app.get('/getStudentDetails/:id', function(req, res) {
 
 
 gulp.task('express', function() {
-    var server = app.listen(3000, function() {
-        console.log("server started at 3000");
-    });
+  var server = app.listen(3000, function() {
+    console.log("server started at 3000");
+  });
 });
 
 gulp.task('default', ['express']);

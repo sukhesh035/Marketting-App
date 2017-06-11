@@ -50,8 +50,10 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="clientName">Add client</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="addStudent" ng-model="studentInfo.clientName" placeholder="Add client">
+                    <div class="col-sm-10"><div ng-if="studentInfo.client_name.length>0" ng-repeat="cname in studentInfo.client_name">
+                        {{cname}}
+                    </div>
+                        <input type="text" class="form-control" id="addStudent" ng-model="studentInfo.clientName" placeholder="Add client"><button ng-click="studentInfo.add()">Add+</button>
                     </div>
                 </div>
 

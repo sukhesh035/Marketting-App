@@ -3,10 +3,12 @@ app.controller("addStudents_controller", ["$scope", "$http", "$state", function 
     $scope.studentInfo = {};
      $scope.studentInfo.client_name=[ ];
    
+$scope.studentInfo.add = function(){
+    $scope.studentInfo.client_name.push($scope.studentInfo.clientName);
+    $scope.studentInfo.clientName="";
+}
 
     $scope.getInfo = function () {
-//$scope.studentInfo.client_name.push($scope.studentInfo.fields);
-        $scope.studentInfo.client_name.push($scope.studentInfo.clientName);
         console.log($scope.studentInfo);
         console.log($scope.studentInfo.client_name);
         $http.post('/addstudent', $scope.studentInfo).then(function (response) {

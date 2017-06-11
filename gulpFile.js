@@ -32,7 +32,11 @@ app.get('/getStudentList', function(req, res) {
     });
 });
 app.post('/addstudent', function(req, res){
-   console.log(req.params.id);
+    
+    
+    
+    
+   console.log("Hola",req.params.id);
     var id = Math.floor(Math.random()*10000);
     req.body.id = id;
 //   console.log("Date" + db.collection.aggregate(ISODate(req.body.start_date)));

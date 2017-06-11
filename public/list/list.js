@@ -7,8 +7,8 @@ app.controller("list_controller", ["$scope", "$http", "$state", "$location", fun
     });
 
     $scope.deleteStudent = function (id, index) {
-        var r = confirm("Do you want to delete the Student");
-        if (r == true) {
+        var infoMsg = confirm("Do you want to delete the Student");
+        if (infoMsg == true) {
             $http.put('/deleteStudent/' + id).then(function (response) {
                 if (response.data == "User deleted succesfully") {
                     alert("Student Deleted Successfully");

@@ -1,5 +1,5 @@
 var app = angular.module("routes_module", ['ui.router']);
-app.config(function ($urlRouterProvider, $stateProvider) {
+app.config(function($urlRouterProvider, $stateProvider) {
     $urlRouterProvider.otherwise('/home');
 
     $stateProvider.state('home', {
@@ -15,6 +15,11 @@ app.config(function ($urlRouterProvider, $stateProvider) {
         url: '/list',
         templateUrl: 'list/list.html'
     });
+    $stateProvider.state('contact', {
+        url: '/contact',
+        templateUrl: 'contact/contact.html'
+    });
+
     $stateProvider.state('editStudent', {
         url: '/editStudent/:id',
         templateUrl: 'addstudents/addstudents1.html'

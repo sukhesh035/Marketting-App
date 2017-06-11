@@ -29,7 +29,7 @@ app.config(function($urlRouterProvider, $stateProvider) {
         templateUrl: 'addstudents/studentDetails.html'
     });
     $stateProvider.state('client_details', {
-        url: '/studentDetails/:id',
+        url: '/client_details/:id',
         templateUrl: 'client_details/client_details.html'
     });
 });

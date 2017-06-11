@@ -1,0 +1,62 @@
+<div ng-controller="addStudents_controller">
+               <div class="form-group">
+                <label class="control-label col-sm-2" for="clientName">Add client</label>
+                <div class="col-sm-10">
+                    <div ng-if="studentInfo.client_name.length>0">
+
+                    </div>
+                    <input type="text" class="form-control" id="addStudent" ng-model="obj.name" placeholder="Add client"><button ng-click="studentInfo.add()" ng-model="myVar">Add+</button>
+                </div>
+            </div>
+           
+   <div class="container" ng-if = "myVar" >
+    <div class="row">
+        <form class="form-horizontal">
+            
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="name">Client Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="name" ng-model="display_details.name" placeholder="Enter Client Name" required>
+
+                </div>
+
+            </div>
+            <div>
+                <label class="control-label col-sm-2" for="vendor_name">Vendor Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="vendor_name" ng-model="display_details.vendor_name" placeholder="Enter Client Name" required>
+
+                </div>
+
+            </div>
+            <div>
+                <label class="control-label col-sm-2" for="implementation">Implementation:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="implementation" ng-model="display_details.implementation" placeholder="Enter Client Name" required>
+
+                </div>
+
+            </div>
+            <div>
+                <label class="control-label col-sm-2" for="vendor_contact">Vendor contact:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="vendor_contact" ng-model="display_details.no_of_rounds" placeholder="Enter Client Name" required>
+
+                </div>
+
+            </div>
+            <div> <label class="control-label col-sm-2" for="no_of_rounds">Rounds of interview:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="no_of_rounds" ng-model="display_details.no_of_rounds" placeholder="Enter Client Name" required>
+
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+</div>
+</div>
+<div>
+     <ui-view></ui-view>
+</div>

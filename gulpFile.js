@@ -69,20 +69,6 @@ app.get('/getStudentList', function (req, res) {
 
 
 });
-<<<<<<< HEAD
-app.post('/addstudent', function(req, res){
-    
-    
-    
-    
-   console.log("Hola",req.params.id);
-    var id = Math.floor(Math.random()*10000);
-    req.body.id = id;
-//   console.log("Date" + db.collection.aggregate(ISODate(req.body.start_date)));
-    db.Marketing_Student.insert(req.body,function(err, docs){
-        res.send("Added Succesfully");
-    });
-=======
 
 //p();
 
@@ -94,7 +80,6 @@ app.post('/addstudent',function(req, res){
   collection.insert(req.body,function(err, docs){
     res.send("Added Succesfully");
   });
->>>>>>> refs/remotes/origin/Production
 });
 
 app.put('/deleteStudent/:id',function(req, res){

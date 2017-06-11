@@ -1,10 +1,15 @@
 var app = angular.module("list_consultants", []);
 app.controller("list_controller", ["$scope", "$http", "$state", "$location", function ($scope, $http, $state, $location) {
+    
+    $scope.isLoad =true;
+    
+    
+    
     $http.get('/getStudentList').then(function (response) {
         console.log(response);
         $scope.result = response.data.filter(Boolean);
         console.log($scope.result);
-
+        $scope.isLoad =false;
     });
 
     $scope.deleteStudent = function (id, index) {

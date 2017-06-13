@@ -42,7 +42,7 @@
     font-size: 20px;
     position: absolute;
     overflow: hidden;
-    top: 40%;
+    top: 31%;
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -58,7 +58,7 @@
 }
 
 .show_details {
-    margin-top: 100px;
+    margin-top: 120px;
 }
 
 #studentsDetailsDiv {

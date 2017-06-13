@@ -1,4 +1,3 @@
-/*
 .footer {
     background: black;
     bottom: 0px;
@@ -15,7 +14,6 @@ footer {
     padding: 1rem;
 }
 
-*/
 
 
 /**
@@ -65,4 +63,10 @@ body {
 #describe {
     width: 347px;
     color: grey;
+}
+
+
+md-progress-circular{
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-               No Of Students{{result.length}}
+                No Of Students{{result.length}}
                 <md-progress-circular ng-if="isLoad" class="md-accent md-hue-5" md-diameter="96"></md-progress-circular>
                 <div ng-repeat="list in result" class="candidate_container">
                     <div class="candidate">
@@ -22,14 +22,14 @@
                         <div class="overlay">
                             <button class="text btn btn-warning btn-xs" ng-click="deleteStudent(list.id,$index)">Delete</button><br>
                             <button class="text edit_candidate btn btn-info btn-xs" ng-click="editStudent(list.id)">Edit</button>
-                            <button ng-click = "client_details(list.id)" class="text show_details btn btn-info btn-xs" >show Details</button>
+                            <button ng-click="client_details(list.id)" class="text show_details btn btn-info btn-xs">show Details</button>
                         </div>
                         <!--
                         <u><a href="edit">Edit</a></u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <u><a href="delete">Delete</a></u>
 -->
                     </div>
-                    
+
                 </div>
 
             </div>

@@ -1,7 +1,6 @@
 .footer {
     background: black;
     bottom: 0px;
-
     position: absolute;
     padding: 10px 30px 10px 30px;
 }
@@ -9,11 +8,9 @@
 footer {
     color: #c1c1c1;
     bottom: 0px;
-
     width: 100%;
     padding: 1rem;
 }
-
 
 
 /**
@@ -65,8 +62,7 @@ body {
     color: grey;
 }
 
-
-md-progress-circular{
+md-progress-circular {
     margin-left: auto;
     margin-right: auto;
 }

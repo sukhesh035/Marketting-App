@@ -1,5 +1,5 @@
 var app = angular.module("routes_module", ['ui.router']);
-app.config(function($urlRouterProvider, $stateProvider) {
+app.config(function ($urlRouterProvider, $stateProvider) {
     $urlRouterProvider.otherwise('/home');
 
     $stateProvider.state('home', {

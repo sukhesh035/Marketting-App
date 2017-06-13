@@ -1,15 +1,15 @@
 var app = angular.module("list_consultants", []);
 app.controller("list_controller", ["$scope", "$http", "$state", "$location", function ($scope, $http, $state, $location) {
-    
-    $scope.isLoad =true;
-    
-    
-    
+
+    $scope.isLoad = true;
+
+
+
     $http.get('/getStudentList').then(function (response) {
         console.log(response);
         $scope.result = response.data.filter(Boolean);
         console.log($scope.result);
-        $scope.isLoad =false;
+        $scope.isLoad = false;
     });
 
     $scope.deleteStudent = function (id, index) {
@@ -31,6 +31,6 @@ app.controller("list_controller", ["$scope", "$http", "$state", "$location", fun
     //        $location.path("/studentDetails/" + id);
     //    };
     $scope.client_details = function (id) {
-    $location.path("/client_details/" + id);
+        $location.path("/client_details/" + id);
     };
 }]);

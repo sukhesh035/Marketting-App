@@ -92,7 +92,14 @@ app.put('/deleteStudent/:id',function(req, res){
     }
   });
 });
-
+app.post('/interview_details/',function(req, res){
+  //   console.log(req.body);
+//  var id = Math.floor(Math.random()*10000);
+//  req.body.id = id;
+  collection.insert(req.body,function(err, docs){
+    res.send("Added Succesfully");
+  });
+});
 app.get('/getStudentDetails/:id', function(req, res) {
   console.log(req.params.id);
   var currentStudentId = Number(req.params.id);
@@ -118,10 +125,30 @@ app.get('/getStudentDetails/:id', function(req, res) {
 
 });
 
+app.get('/getClient/:id', function(req, res) {
+console.log(req.params.id);
+    var currentStudentId = Number(req.params.id);
+ var cursor = collection.find({ id: currentStudentId });
+var dataObj = {};
+    return new Promise(function(resolve, reject) {
+    cursor.each(function(err,doc){
+      if (err) {
+        console.log(err);
+        reject(err);
+      } else {
+        dataObj.doc;
+
+      }
+    });
+    setTimeout(function(){
+      console.log(dataObj);
+      res.send(dataObj);
+    },500);
+
+  });
 
 
-
-
+});
 
 gulp.task('express', function() {
   var server = app.listen(3000, function() {

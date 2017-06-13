@@ -1,23 +1,24 @@
 var app = angular.module("addStudents_module", []);
-app.controller("addStudents_controller", ["$scope", "$http", "$state", function ($scope, $http, $state) {
+app.controller("addStudents_controller", ["$scope", "$http", "$state", "$location", function ($scope, $http, $state, $location) {
     $scope.studentInfo = {};
     $scope.studentInfo.client_name = [];
     $scope.obj = {};
     $scope.studentInfo.add = function () {
-//        $scope.myVar = false;
         console.log("entered");
         $scope.display_details = $scope.studentInfo.client_name.push($scope.obj);
         console.log($scope.studentInfo.client_name);
-        $scope.myVar = true;
+        (function () {
+            $location.path("/interview_details/");
+        })();
     }
 
     $scope.getInfo = function () {
         console.log($scope.studentInfo);
+        $scope.display_details = $scope.studentInfo.client_name.push($scope.obj);
         console.log($scope.studentInfo.client_name);
         $http.post('/addstudent', $scope.studentInfo).then(function (response) {
             console.log(response);
             $scope.studentInfo = {};
-            //console.log($scope.studentInfo.client_name);
         });
 
 
@@ -31,7 +32,11 @@ app.controller("addStudents_controller", ["$scope", "$http", "$state", function 
             $scope.studentInfo = response.data[0];
         });
     }
-
+    if ($state.current.name == "interview_details") {
+        $http.post("/interview_details/", $scope.display_details).then(function (response) {
+            console.log(response);
+        });
+    }
     //    if($state.current.name == "studentDetails"){
     //        $http.get("/getStudentDetails/"+$state.params.id).then(function(response){
     //            console.log(response);

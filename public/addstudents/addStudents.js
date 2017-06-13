@@ -1,5 +1,5 @@
 var app = angular.module("addStudents_module", []);
-app.controller("addStudents_controller", ["$scope", "$http", "$state", "$location", function ($scope, $http, $state, $location) {
+app.controller("addStudents_controller", ["$scope", "$http", "$state", "$location","shared_service", function ($scope, $http, $state, $location, shared_service) {
     $scope.studentInfo = {};
     $scope.studentInfo.client_name = [];
     $scope.obj = {};
@@ -27,7 +27,7 @@ app.controller("addStudents_controller", ["$scope", "$http", "$state", "$locatio
     console.log("$state.params" + $state.params);
 
     if ($state.current.name == "editStudent") {
-        $http.get("/getStudentDetails/" + $state.params.id).then(function (response) {
+        shared_service.getDetails($state.params.id).then(function (response) {
             console.log(response);
             $scope.studentInfo = response.data[0];
         });

@@ -38,14 +38,14 @@
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="startdate">Start Date:</label>
 
-                    <md-datepicker style="margin-top: 13px;"
-                                   id="StartDate" ng-model="studentInfo.start_date" md-placeholder="Enter date"></md-datepicker>
+                    <md-datepicker style="margin-top: 13px;" id="StartDate" ng-model="studentInfo.start_date" md-placeholder="Enter date"></md-datepicker>
 
                     <style>
-                        md-datepicker button md-icon svg path{
+                        md-datepicker button md-icon svg path {
                             color: white;
                         }
-                        .md-datepicker-input-container input{
+                        
+                        .md-datepicker-input-container input {
                             color: white;
                         }
 
@@ -55,23 +55,23 @@
 
                 </div>
 
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="client_count">Client Count:</label>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control" id="clientCount" ng-model="studentInfo.client_count" placeholder="Enter no. of client Interviews" required>
-                    </div>
-                </div>
-<!--
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="clientName">Add client</label>
-                    <div class="col-sm-10">
+<!--                <div class="form-group">-->
+<!--                    <label class="control-label col-sm-2" for="client_count">Client Count:</label>-->
+<!--                    <div class="col-sm-10">-->
+<!--                        <input type="number" class="form-control" id="clientCount" ng-model="studentInfo.client_count" placeholder="Enter no. of client Interviews" required>-->
+<!--                    </div>-->
+<!--                </div>-->
+                <!--
+<div class="form-group">
+    <label class="control-label col-sm-2" for="clientName">Add client</label>
+    <div class="col-sm-10">
 -->
-<!--
+                <!--
                        <div ng-if="studentInfo.client_name.length>0" ng-repeat="cname in studentInfo.client_name">
                         {{cname}}
                         </div>
 -->
-<!--
+                <!--
                         <input type="text" class="form-control" id="addStudent" ng-model="studentInfo.clientName" placeholder="Add client"><button ng-click="studentInfo.add()">Add+</button>
                     </div>
                 </div>

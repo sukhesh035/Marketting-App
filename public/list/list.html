@@ -3,7 +3,6 @@
 
     <style>
 
-
     </style>
 
     <div class="col-lg-12 col-lg-offset-1">
@@ -22,27 +21,22 @@
                         <h4 class="candidate_item">{{list.last_name}}</h4><br><br>
                         <p class="candidate_item">Strt Date: {{list.start_date | date:'MM-dd-yyyy' }}</p>
                         <p class="candidate_item">No.of client intrvws: {{list.client_count}}</p>
-<!--                        <h6 class="candidate_item">{{list.id}}</h6>-->
+                        <!--                        <h6 class="candidate_item">{{list.id}}</h6>-->
                         <div class="overlay">
                             <button class="text btn btn-warning btn-xs" ng-click="deleteStudent(list.id,$index)">Delete</button><br>
                             <button class="text edit_candidate btn btn-info btn-xs" ng-click="editStudent(list.id)">Edit</button>
-                            <button ng-click = "client_details(list.id)" class="text show_details btn btn-info btn-xs" >show Details</button>
+                            <button ng-click="client_details(list.id)" class="text show_details btn btn-info btn-xs">show Details</button>
                         </div>
-                        <!--
-<u><a href="edit">Edit</a></u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<u><a href="delete">Delete</a></u>
--->
                     </div>
 
                 </div>
 
             </div>
         </div>
+        <div>
+            <ui-view>
+
+            </ui-view>
+        </div>
     </div>
-
-</div>
-<div>
-    <ui-view>
-
-    </ui-view>
 </div>

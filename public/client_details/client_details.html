@@ -1,16 +1,21 @@
 <div ng-controller="addStudents_controller">
     <div class="form-group">
-        <label class="control-label col-sm-2" for="clientName">Add client</label>
+        
         <div class="col-sm-10">
-            <div ng-if="studentInfo.client_name.length>0">
-                <div class="col-sm-10">
-                    <div ng-if="studentInfo.client_name.length>0" ng-repeat="cname in studentInfo.client_name">
-                        {{cname}}
-                    </div>
-                </div>
-            </div>
+            <ul>
+               <li ng-repeat="cname in clients | filter:query | orderBy:orderProp"> 
+                    <h4><a ui-sref="client_details" ng-click="showDetails = ! showDetails">{{cname.name}}</a></h4>
+                    <div class="procedure-details" ng-show="showDetails">
+                        <p>Implementation: {{cname.implementation}}</p>
+                        <p>vendo: {{cname.vendor}}</p>
+                        <p>Location: {{cname.location}}</p>
 
-            <button style="margin-right:20px" class="btn btn-info" ng-click="studentInfo.add()">Add+</button>
+                    </div>
+                </li>
+            </ul>
+
+
+           <label class="control-label col-sm-2" for="clientName">Add client</label> <button style="margin-right:20px" class="btn btn-info" ng-click="add()">Add+</button>
         </div>
     </div>
 </div>

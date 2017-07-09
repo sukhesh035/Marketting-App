@@ -33,7 +33,7 @@ app.config(function ($urlRouterProvider, $stateProvider) {
         templateUrl: 'client_details/client_details.html'
     });
     $stateProvider.state('interview_details', {
-        url: '/interview_details/',
+        url: '/interview_details/:id',
         templateUrl: 'client_details/interview_details.html'
     });
 });

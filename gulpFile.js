@@ -94,11 +94,13 @@ app.put('/deleteStudent/:id', function (req, res) {
         }
     });
 });
-app.post('/interview_details/', function (req, res) {
+app.post('/addDetails/:id', function (req, res) {
+    console.log("tanuj");
+    console.log(req.body);
     //   console.log(req.body);
     //  var id = Math.floor(Math.random()*10000);
     //  req.body.id = id;
-    collection.insert(req.body, function (err, docs) {
+    collection.update({id:req.params.id},{$push:{clients:req.body}}, function (err, docs) {
         res.send("Added Succesfully");
     });
 });

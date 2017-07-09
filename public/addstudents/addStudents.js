@@ -1,21 +1,17 @@
 var app = angular.module("addStudents_module", []);
-app.controller("addStudents_controller", ["$scope", "$http", "$state", "$location","shared_service", function ($scope, $http, $state, $location, shared_service) {
+app.controller("addStudents_controller", ["$scope", "$http", "$state", "$location", "shared_service", function ($scope, $http, $state, $location, shared_service) {
     $scope.studentInfo = {};
-    $scope.studentInfo.client_name = [];
+    $scope.studentInfo.clients = [];
     $scope.obj = {};
-    $scope.studentInfo.add = function () {
-        console.log("entered");
-        $scope.display_details = $scope.studentInfo.client_name.push($scope.obj);
-        console.log($scope.studentInfo.client_name);
+    $scope.add = function () {
+        console.log($scope.studentInfo.clients);
         (function () {
-            $location.path("/interview_details/");
+            $location.path("/interview_details/"+$state.params.id);
         })();
     }
 
     $scope.getInfo = function () {
-        console.log($scope.studentInfo);
-        $scope.display_details = $scope.studentInfo.client_name.push($scope.obj);
-        console.log($scope.studentInfo.client_name);
+        console.log($scope.studentInfo.clients);
         $http.post('/addstudent', $scope.studentInfo).then(function (response) {
             console.log(response);
             $scope.studentInfo = {};
@@ -23,6 +19,21 @@ app.controller("addStudents_controller", ["$scope", "$http", "$state", "$locatio
 
 
     };
+
+
+    $scope.getDetails = function (id) {
+        console.log("tanuj");
+        $scope.display_details = $scope.studentInfo.clients.push($scope.obj);
+        console.log($scope.studentInfo.clients);
+        $http.post('/addDetails/' + $state.params.id, $scope.obj).then(function (response) {
+            console.log(response);
+            $scope.obj = {};
+        });
+
+
+    };
+
+
 
     console.log("$state.params" + $state.params);
 
@@ -46,10 +57,13 @@ app.controller("addStudents_controller", ["$scope", "$http", "$state", "$locatio
     //        });
     //    }
     if ($state.current.name == "client_details") {
-        $http.get("/getClient/" + $state.params.id).then(function (response) {
+        shared_service.getDetails($state.params.id).then(function (response) {
                 console.log(response);
+                $scope.clients = response.data[0].clients;
+                console.log($scope.clients);
             }
 
         );
     }
+
 }]);
